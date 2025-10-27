@@ -1,0 +1,54 @@
+<!--
+    Copyright (c) 2025. All rights reserved.
+    Author: jacub
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Animation</title>
+
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, purple, rgba(15, 15, 124, 0.4));
+            color: rgb(177, 179, 177);
+            font-family: "lato", sans-serif;
+            font-size: 2.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Words Animation</h1>
+    <p>This is a simple words animation example.</p>
+    <div class="container" id="word-container"></div>
+    <script type="module">
+        import WordAnimation from './js/WordAnimation.js';
+
+        const container = document.querySelector('.container');
+        const wordAnimation = new WordAnimation(container, {
+            words: ["Creativity", "Motion", "Code", "Energy", "Flow", "Inspiration", "Design", "Art"],
+            maxWords: 30,
+            animationDuration: 5000,
+            wordInterval: 1000
+        });
+    </script>
+
+    <!--
+        To use this animation component in another project:
+        1. Copy the 'WordAnimation.js' file into your project's JavaScript folder.
+        2. Ensure your HTML file includes a container element with the class 'container'.
+        3. Add a <script type="module"> tag to import and initialize the WordAnimation component.
+        4. Customize the options (words, maxWords, animationDuration, wordInterval) as needed.
+        5. Ensure your project supports ES6 modules (modern browsers).
+    -->
+</body>
+
+</html>

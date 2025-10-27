@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Instructions</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">GitHub Instructions</h1>
+        <p>Follow these steps to manage repositories, download projects, and update them on GitHub:</p>
+
+        <h2>Switching Between Repositories in VS Code</h2>
+        <ol>
+            <li><strong>Open a Repository:</strong> Go to <em>File > Open Folder</em> in VS Code. Navigate to the folder
+                of the repository you want to work on and open it.</li>
+            <li><strong>Use the Source Control Panel:</strong> Click on the <em>Source Control</em> icon in the Activity
+                Bar (on the left side of VS Code). If the repository is already initialized, you’ll see the Git controls
+                for that repository.</li>
+            <li><strong>Switch Between Repositories:</strong> If you have multiple repositories open in a workspace, you
+                can switch between them by clicking the dropdown in the <em>Source Control</em> panel.</li>
+            <li><strong>Close a Repository:</strong> To close a repository, simply close the folder in VS Code by going
+                to <em>File > Close Folder</em>.</li>
+        </ol>
+
+        <h2>Downloading a Project from GitHub to VS Code</h2>
+        <ol>
+            <li><strong>Clone the Repository:</strong>
+                <ul>
+                    <li>Open the <em>Command Palette</em> in VS Code (<code>Ctrl+Shift+P</code> or
+                        <code>Cmd+Shift+P</code> on Mac).</li>
+                    <li>Type <code>Git: Clone</code> and select it.</li>
+                    <li>Paste the repository URL (e.g., <code>https://github.com/username/repository.git</code>) and
+                        press Enter.</li>
+                    <li>Choose a local folder where the repository will be cloned.</li>
+                </ul>
+            </li>
+            <li><strong>Open the Cloned Repository:</strong> After cloning, VS Code will prompt you to open the
+                repository. Click <em>Open</em>.</li>
+            <li><strong>Install Dependencies (if applicable):</strong>
+                <ul>
+                    <li>If the project has a <code>package.json</code> (Node.js), <code>requirements.txt</code>
+                        (Python), or similar file, open the terminal in VS Code (<code>Ctrl+`</code>) and run the
+                        appropriate command:</li>
+                    <li>For Node.js: <code>npm install</code></li>
+                    <li>For Python: <code>pip install -r requirements.txt</code></li>
+                </ul>
+            </li>
+            <li><strong>Start Coding:</strong> You can now edit files, add new features, and commit changes.</li>
+        </ol>
+
+        <h2>Updating the Project on GitHub</h2>
+        <ol>
+            <li><strong>Stage Changes:</strong>
+                <ul>
+                    <li>In the <em>Source Control</em> panel, you’ll see a list of modified files.</li>
+                    <li>Click the <code>+</code> icon next to each file to stage it, or click the <code>+</code> icon at
+                        the top to stage all changes.</li>
+                </ul>
+            </li>
+            <li><strong>Commit Changes:</strong>
+                <ul>
+                    <li>Enter a commit message in the text box at the top of the <em>Source Control</em> panel.</li>
+                    <li>Click the checkmark icon to commit the changes.</li>
+                </ul>
+            </li>
+            <li><strong>Push Changes to GitHub:</strong>
+                <ul>
+                    <li>Open the terminal in VS Code (<code>Ctrl+`</code>) and run:</li>
+                    <li><code>git push</code></li>
+                    <li>Alternatively, click the <em>Sync Changes</em> button in the bottom-left corner of VS Code.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Summary of Git Commands</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Action</th>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Initialize Repository</td>
+                    <td><code>git init</code></td>
+                    <td>Initialize a new Git repository in the current directory.</td>
+                </tr>
+                <tr>
+                    <td>Add Files</td>
+                    <td><code>git add .</code></td>
+                    <td>Stage all changes in the current directory for the next commit.</td>
+                </tr>
+                <tr>
+                    <td>Commit Changes</td>
+                    <td><code>git commit -m "Your commit message"</code></td>
+                    <td>Commit the staged changes with a descriptive message.</td>
+                </tr>
+                <tr>
+                    <td>Set Remote Repository</td>
+                    <td><code>git remote add origin https://github.com/username/repository.git</code></td>
+                    <td>Link your local repository to a remote repository on GitHub.</td>
+                </tr>
+                <tr>
+                    <td>Push to GitHub</td>
+                    <td><code>git push -u origin main</code></td>
+                    <td>Push your changes to the <code>main</code> branch of the remote repository.</td>
+                </tr>
+                <tr>
+                    <td>Clone Repository</td>
+                    <td><code>git clone https://github.com/username/repository.git</code></td>
+                    <td>Download a repository from GitHub to your local machine.</td>
+                </tr>
+                <tr>
+                    <td>Check Status</td>
+                    <td><code>git status</code></td>
+                    <td>View the status of your working directory and staged changes.</td>
+                </tr>
+                <tr>
+                    <td>Create New Branch</td>
+                    <td><code>git branch branch_name</code></td>
+                    <td>Create a new branch in your repository.</td>
+                </tr>
+                <tr>
+                    <td>Switch Branch</td>
+                    <td><code>git checkout branch_name</code></td>
+                    <td>Switch to a different branch in your repository.</td>
+                </tr>
+                <tr>
+                    <td>Merge Branch</td>
+                    <td><code>git merge branch_name</code></td>
+                    <td>Merge a branch into the current branch.</td>
+                </tr>
+                <tr>
+                    <td>Pull Changes</td>
+                    <td><code>git pull origin main</code></td>
+                    <td>Fetch and merge changes from the remote repository.</td>
+                </tr>
+                <tr>
+                    <td>View Commit History</td>
+                    <td><code>git log</code></td>
+                    <td>View the commit history of the repository.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <style>
+        .table-hover tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .table-bordered {
+            border: 2px solid #343a40;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .table td {
+            font-size: 1rem;
+        }
+    </style>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
