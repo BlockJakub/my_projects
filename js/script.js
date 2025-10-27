@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2025. All rights reserved.
- * Author: jacub
+ * Author: jacub - https://jacubavisualsweb.wordpress.com/
  */
 
 const words = ["Creativity", "Motion", "Code", "Energy", "Flow", "Inspiration", "Design", "Art", "Dynamic", "Vibrant", "Expressive", "Innovate", "Imagine", "Transform", "Evolve", "Spark", "Vision", "Pulse", "Rhythm", "Harmony", "Fusion", "Synergy", "Momentum", "Wave", "Surge", "Echo", "Radiate", "Illuminate", "Glide", "Soar", "Breeze", "Whirl", "Twist", "Turn", "Leap", "Bound", "Sprint", "Dash", "Zoom", "Fly", "Drift"];

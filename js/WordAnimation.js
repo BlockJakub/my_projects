@@ -1,6 +1,6 @@
 /* 
  * Copyright (c) 2025. All rights reserved.
- * Author: jacub
+ * Author: jacub - https://jacubavisualsweb.wordpress.com/
  */
 
 export default class WordAnimation {
@@ -10,17 +10,31 @@ export default class WordAnimation {
         this.maxWords = options.maxWords || 50;
         this.animationDuration = options.animationDuration || 4000;
         this.wordInterval = options.wordInterval || 800;
+        this.wordElements = [];
+        this.intervalId = null;
         this.sanitizedWords = this.words.map(word => {
             const div = document.createElement('div');
             div.textContent = word;
             return div.textContent;
         });
-        this.init();
     }
 
-    createWord() {
-        if (this.container.children.length >= this.maxWords) {
-            this.container.removeChild(this.container.firstChild); // Remove the oldest word
+    start() {
+        this.stop(); // Ensure no duplicate intervals
+        this.intervalId = setInterval(() => this.addWord(), this.wordInterval);
+    }
+
+    stop() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+    }
+
+    addWord() {
+        if (this.wordElements.length >= this.maxWords) {
+            const oldWord = this.wordElements.shift();
+            this.container.removeChild(oldWord);
         }
 
         const word = document.createElement("span");
@@ -32,19 +46,18 @@ export default class WordAnimation {
         word.style.transition = `transform ${this.animationDuration / 1000}s ease-out, opacity ${this.animationDuration / 1000}s`;
 
         this.container.appendChild(word);
+        this.wordElements.push(word);
+
         setTimeout(() => {
             word.style.transform = `translateY(-400px)`;
             word.style.opacity = 0;
         }, 200);
 
-        setTimeout(() => word.remove(), this.animationDuration);
-    }
-
-    init() {
-        this.interval = setInterval(() => this.createWord(), this.wordInterval);
-    }
-
-    stop() {
-        clearInterval(this.interval);
+        setTimeout(() => {
+            if (this.container.contains(word)) {
+                this.container.removeChild(word);
+                this.wordElements.shift();
+            }
+        }, this.animationDuration);
     }
 }

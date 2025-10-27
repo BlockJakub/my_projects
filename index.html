@@ -1,6 +1,6 @@
 <!--
     Copyright (c) 2025. All rights reserved.
-    Author: jacub
+    Author: jacub - https://jacubavisualsweb.wordpress.com/
 -->
 
 <!DOCTYPE html>
@@ -22,6 +22,23 @@
             font-family: "lato", sans-serif;
             font-size: 2.3em;
         }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
     </style>
 </head>
 
@@ -32,6 +49,7 @@
     <script type="module">
         import WordAnimation from './js/WordAnimation.js';
 
+        // Initialize the WordAnimation component
         const container = document.querySelector('.container');
         const wordAnimation = new WordAnimation(container, {
             words: ["Creativity", "Motion", "Code", "Energy", "Flow", "Inspiration", "Design", "Art"],
@@ -39,6 +57,9 @@
             animationDuration: 5000,
             wordInterval: 1000
         });
+
+        // Start the animation
+        wordAnimation.start();
     </script>
 
     <!--

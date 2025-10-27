@@ -1,3 +1,8 @@
+<!--
+    Copyright (c) 2025. All rights reserved.
+    Author: jacub - https://jacubavisualsweb.wordpress.com/
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +37,8 @@
             <li><strong>Clone the Repository:</strong>
                 <ul>
                     <li>Open the <em>Command Palette</em> in VS Code (<code>Ctrl+Shift+P</code> or
-                        <code>Cmd+Shift+P</code> on Mac).</li>
+                        <code>Cmd+Shift+P</code> on Mac).
+                    </li>
                     <li>Type <code>Git: Clone</code> and select it.</li>
                     <li>Paste the repository URL (e.g., <code>https://github.com/username/repository.git</code>) and
                         press Enter.</li>
@@ -75,6 +81,30 @@
                     <li>Alternatively, click the <em>Sync Changes</em> button in the bottom-left corner of VS Code.</li>
                 </ul>
             </li>
+        </ol>
+
+        <h2>Checklist Before Uploading Files to GitHub</h2>
+        <ol>
+            <li><strong>Ensure Proper File Organization:</strong> Verify that all files are in the correct folders and
+                unnecessary files are removed.</li>
+            <li><strong>Check for Sensitive Information:</strong> Ensure no sensitive data (e.g., API keys, passwords)
+                is included in the files.</li>
+            <li><strong>Update the .gitignore File:</strong> Add files or folders that should not be tracked by Git
+                (e.g., <code>node_modules</code>, <code>.env</code>).</li>
+            <li><strong>Test the Project:</strong> Run the project locally to ensure it works as expected and there are
+                no errors.</li>
+            <li><strong>Write a Descriptive README:</strong> Include a <code>README.md</code> file with details about
+                the project, how to set it up, and how to use it.</li>
+            <li><strong>Stage and Commit Changes:</strong>
+                <ul>
+                    <li>Use <code>git add</code> to stage the changes.</li>
+                    <li>Write a clear and descriptive commit message using <code>git commit</code>.</li>
+                </ul>
+            </li>
+            <li><strong>Check Branch:</strong> Ensure you are on the correct branch (e.g., <code>main</code> or a
+                feature branch).</li>
+            <li><strong>Push to GitHub:</strong> Use <code>git push</code> to upload your changes to the remote
+                repository.</li>
         </ol>
 
         <h2>Summary of Git Commands</h2>
@@ -149,6 +179,18 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row text-center">
+            <code><pre>git remote set-url origin https://github.com/BlockJakub/my_projects.git</pre></code>
+
+            <p>set the correct remote URL for your repository</p>
+
+
+            <code><pre>git push -u origin main</pre></code>
+
+        </div>
     </div>
 
     <style>
